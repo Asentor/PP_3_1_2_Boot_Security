@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:sec="http://www.w3.org/1999/xhtml">
+<div th:replace="headmenu :: head"> </div>
+<body>
+<div th:replace="headmenu :: header"> </div>
+<main class="d-flex  row-cols-md-1 flex-nowrap">
+  <div th:replace="headmenu :: menu"> </div>
+  <!------------------ main content ----------------------->
+  <div class="col" style="width: 30px"></div>
+  <div class="row ">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4  border-bottom">
+        User info
+      </h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">SecondName</th>
+          <th scope="col">Age</th>
+          <th scope="col">E-Mail</th>
+          <th scope="col">Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <th sec:authentication="principal.id" scope="row">1</th>
+          <td sec:authentication="principal.name" >Name</td>
+          <td sec:authentication="principal.secondName">SecondName</td>
+          <td sec:authentication="principal.age" >AGE</td>
+          <td sec:authentication="principal.email">Mail</td>
+          <td sec:authentication="principal.authorities">no Roles</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</main>
+</body>
+</html>
